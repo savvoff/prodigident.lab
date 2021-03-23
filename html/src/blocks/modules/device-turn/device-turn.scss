@@ -1,0 +1,11 @@
+.device-turn {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: $dark;
+  z-index: $zindex-fixed * 10;
+  @media screen and (max-width: 768px) and (min-aspect-ratio: 8/5) {
+    display: flex;
+  }
+}

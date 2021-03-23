@@ -1,0 +1,16 @@
+@import "node_modules/simplebar/dist/simplebar";
+.simplebar {
+  &-track {
+    height: 96%;
+    bottom: initial;
+    background-color: rgba($gray-300, 0.1);
+    &.simplebar-vertical {
+      top: 2%;
+      width: 3px;
+      right: 5px;
+    }
+  }
+  &-scrollbar {
+    background-color: $gray-300;
+  }
+}

@@ -1,0 +1,26 @@
+.page-footer {
+  position: relative;
+  .socials {
+    a {
+      display: inline-block;
+      transform: scale(1);
+      @include hover-focus() {
+        transform: scale(1.15);
+      }
+    }
+  }
+  .phone {
+    display: block;
+    color: $white;
+    font-size: $font-size-lg;
+  }
+  .meta-pages__list {
+    li {
+      &:not(:last-child) {
+        padding-right: $spacer/4;
+        margin-right: $spacer/4;
+        border-right: $border-width solid $secondary;
+      }
+    }
+  }
+}

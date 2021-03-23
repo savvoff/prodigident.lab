@@ -1,0 +1,250 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+$enable-caret:                                true !default;
+$enable-rounded:                              true !default;
+$enable-shadows:                              true !default;
+$enable-gradients:                            false !default;
+$enable-transitions:                          true !default;
+$enable-prefers-reduced-motion-media-query:   true !default;
+$enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes:                         true !default;
+$enable-pointer-cursor-for-buttons:           true !default;
+$enable-print-styles:                         true !default;
+$enable-responsive-font-sizes:                false !default;
+$enable-validation-icons:                     true !default;
+$enable-deprecation-messages:                 true !default;
+
+// Color system
+//
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e5e5e5 !default;
+$gray-300: #d8d8d8 !default;
+$gray-400: #ced4da !default;
+$gray-500: #878787 !default;
+$gray-600: #7c7c7c !default;
+$gray-700: #6b6b6b !default;
+$gray-800: #343434 !default;
+$gray-900: #0e0e0e !default;
+$black: #000 !default;
+
+$red: #e30613 !default;
+
+$primary: $gray-800;
+$secondary: $red;
+$light: $gray-200 !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "dark-light": $gray-600
+  ),
+  $theme-colors
+);
+$body-bg: $white;
+$body-color: $primary !default;
+
+//
+$spacer: 1rem !default;
+$spacers: () !default;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    6: ($spacer * 5)
+  ),
+  $spacers
+);
+
+$vw-320: rem-calc(320) !default;
+$vw-576: rem-calc(576) !default;
+$vw-768: rem-calc(768) !default;
+$vw-992: rem-calc(992) !default;
+$vw-1200: rem-calc(1200) !default;
+$vw-1600: rem-calc(1600) !default;
+$vw-1920: rem-calc(1920) !default;
+$vw-2560: rem-calc(2560) !default;
+
+// Links
+//
+$link-color: darken($red, 10%) !default;
+$link-decoration: none !default;
+$link-hover-color: lighten($link-color, 60%) !default;
+$link-hover-decoration: none !default;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Components
+//
+$line-height-base: 1.4 !default;
+$line-height-lg: 1.6 !default;
+$line-height-sm: 1.2 !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 900 !default;
+
+$letter-spacing-base: 0.02 * $spacer !default;
+$letter-spacing-lg: 0.05 * $spacer !default;
+$letter-spacing-sm: 0.01 * $spacer !default;
+
+$border-width: 1px !default;
+$border-color: $primary !default;
+ 
+$border-radius: 0.625rem !default;
+$border-radius-lg: 1rem !default;
+$border-radius-sm: 0.3125rem !default;
+
+$box-shadow-sm: 0 4px 4px rgba($red, 0.5) !default;
+$box-shadow: 0 8px 8px rgba($red, 0.5) !default;
+$box-shadow-lg: 0px 15px 50px 5px rgba($red, 0.5) !default;
+
+// Typography
+//
+$font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-secondary: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+"Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg: $font-size-base * 1.125 !default;
+$font-size-sm: $font-size-base * 0.75 !default;
+
+$h1-font-size: $font-size-base * 3.75 !default;
+$h2-font-size: $font-size-base * 2.5 !default;
+$h3-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: $font-size-base * 1.25 !default;
+$h5-font-size: $font-size-base * 0.875 !default;
+$h6-font-size: $font-size-base * 0.625 !default; 
+
+$headings-font-family: $font-family-secondary !default;
+$headings-margin-bottom: $spacer !default;
+$headings-font-weight: bold !default;
+
+$mark-padding: 0.125em !default;
+$mark-bg: $red !default;
+
+// Buttons + Forms
+//
+$input-btn-padding-y: 1rem !default;
+$input-btn-padding-x: 2rem !default;
+$input-btn-font-family: $font-family-sans-serif !default;
+$input-btn-font-size: $font-size-base !default;
+$input-btn-line-height: $line-height-base !default;
+
+$input-btn-focus-width: 0.2rem !default;
+$input-btn-focus-color: rgba($secondary, 0.25) !default;
+$input-btn-focus-box-shadow: 0 4px 4px $input-btn-focus-width $input-btn-focus-color !default;
+
+$input-btn-padding-y-sm: 0.25rem !default;
+$input-btn-padding-x-sm: 0.5rem !default;
+$input-btn-font-size-sm: $font-size-sm !default;
+$input-btn-line-height-sm: $line-height-sm !default;
+
+$input-btn-padding-y-lg: 1rem !default;
+$input-btn-padding-x-lg: 2rem !default;
+$input-btn-font-size-lg: $font-size-lg !default;
+$input-btn-line-height-lg: $line-height-lg !default;
+
+$input-btn-border-width: $border-width !default;
+
+$label-margin-bottom: 0.5rem !default;
+$input-padding-y: $input-btn-padding-y !default;
+$input-padding-x: $input-btn-padding-x !default;
+$input-font-family: $input-btn-font-family !default;
+$input-font-size: $input-btn-font-size !default;
+$input-font-weight: $font-weight-normal !default;
+
+$input-line-height: $input-btn-line-height !default;
+
+$input-padding-y-sm: $input-btn-padding-y-sm !default;
+$input-padding-x-sm: $input-btn-padding-x-sm !default;
+$input-font-size-sm: $input-btn-font-size-sm !default;
+$input-line-height-sm: $input-btn-line-height-sm !default;
+
+$input-padding-y-lg: $input-btn-padding-y-lg !default;
+$input-padding-x-lg: $input-btn-padding-x-lg !default;
+$input-font-size-lg: $input-btn-font-size-lg !default;
+$input-line-height-lg: $input-btn-line-height-lg !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: $border-radius * 0 !default;
+$btn-border-radius-lg: $border-radius-lg !default;
+$btn-border-radius-sm: $border-radius-sm !default;
+$btn-font-weight: 500 !default;
+$btn-focus-box-shadow: 0 4px 4px rgba($gray-600, 0.5) !default;
+
+$input-bg: $gray-100 !default;
+$input-disabled-bg: $gray-300 !default;
+
+$input-color: $body-color !default;
+$input-border-color: rgba($white, 0.2) !default;
+$input-border-width: $input-btn-border-width !default;
+$input-box-shadow: inset 0 1px 1px rgba($black, 0.075) !default;
+
+$input-border-radius: 0 !default;
+$input-border-radius-lg: $border-radius-lg !default;
+$input-border-radius-sm: $border-radius-sm !default;
+
+$input-focus-bg: $input-bg !default;
+$input-focus-color: $input-color !default;
+$input-focus-width: $input-btn-focus-width !default;
+$input-focus-box-shadow: $input-btn-focus-box-shadow !default;
+
+$input-placeholder-color: $gray-600 !default;
+$input-plaintext-color: $body-color !default;
+
+$input-height-border: $input-border-width * 2 !default;
+
+$input-height: add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false)) !default;
+$input-height-sm: add($input-line-height-sm * 1em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;
+$input-height-lg: add($input-line-height-lg * 1em, add($input-padding-y-lg * 2, $input-height-border, false)) !default;
+
+// Navs
+//
+$nav-link-padding-y: 1.25rem !default;
+$nav-link-padding-x: 2rem !default;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding: 0.75rem !default;
+$table-cell-padding-sm: 0.3rem !default;
+
+$table-color: $body-color !default;
+$table-bg: null !default;
+$table-accent-bg: $gray-200 !default;
+
+@import "node_modules/bootstrap/scss/variables";

@@ -1,0 +1,184 @@
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(180deg, $white, $gray-200);
+  @include transition(opacity 0.3s linear);
+  .is-loaded & {
+    visibility: visible;
+    opacity: 1;
+  }  
+}
+.text-plain {
+  font-family: $font-family-base;
+  font-weight: normal;
+}
+.page-section {
+  position: relative;
+  overflow: hidden;
+  &__title {
+    position: relative;
+    left: 12%;
+    filter: drop-shadow(0 0 3px $white);
+    &:before {
+      position: absolute;
+      content: "";      
+      @include fluid($vw-1600, $vw-2560, $spacer * 2, $spacer * 3.5, 'top');
+      @include fluid($vw-576, $vw-1200, $spacer * 1.5, $spacer * 2, 'top');
+      left: -12%;
+      margin-top: -2.5px;
+      width: 12%;
+      height: 5px;
+      background-color: $secondary;
+    }
+  }
+  &__text {
+    @include fluid($vw-1920, $vw-2560, $font-size-sm, $font-size-sm * 1.5);
+    @include fluid($vw-576, $vw-1200, $h6-font-size, $font-size-sm);
+  }
+  &__caption {
+    font-weight: 500;
+    @include fluid($vw-1920, $vw-2560, $h4-font-size, $h4-font-size * 1.5);
+    @include fluid($vw-576, $vw-1200, $h5-font-size, $h4-font-size);
+  }
+  &__strong {
+    font-weight: 900;
+  }
+  &__desc {
+    position: relative;
+    left: 12%;
+    filter: drop-shadow(0 0 3px $white);
+    &:before {
+      position: absolute;
+      content: "";      
+      @include fluid($vw-1600, $vw-2560, $spacer * 1.5, $spacer * 2, 'top');
+      @include fluid($vw-576, $vw-1200, $spacer / 1.25, $spacer * 1.5, 'top');
+      left: -12%;
+      margin-top: -2.5px;
+      width: 12%;
+      height: 5px;
+      background-color: $secondary;
+    }
+  }
+  &__subtitle {
+    position: relative;
+    left: 12%;
+    line-height: $line-height-lg;
+  }
+}
+.ratio-16x9 {
+  @include aspect-ratio(16, 9);
+}
+.ratio-1x1 {
+  @include aspect-ratio(1, 1);
+}
+@for $i from 1 through 10 {
+  .is-#{$i*10}-height {
+    min-height: #{$i * 10}vh;
+    min-height: calc(var(--vh, 1vh) * #{$i * 10});  
+    &.is-limit {
+      height: 1px;
+      max-height: #{$i * 10}vh;
+      max-height: calc(var(--vh, 1vh) * #{$i * 10});
+    }
+  }
+}
+.no-cursor-js {
+  * {
+    cursor: none !important;
+  }
+}
+.icon {
+  &-login {
+    max-width: 26px;
+    max-height: 26px;
+  }
+  &-social {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  &-phone, &-mail {
+    max-width: 16px;
+    max-height: 16px;
+  }
+  &-chevron {
+    max-width: 8px;
+    max-height: 8px;
+    fill: $primary;
+    .show-menu & {
+      fill: $white;
+    }
+  }
+  &-arrow {
+    max-width: 24px;
+    max-height: 10px;
+    fill: $secondary;
+  }
+  &-delete {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  &-error {
+    display: none;
+  }
+}
+.img-fluid {
+  @include img-fluid;
+}
+.img-fit {
+  & > img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include object-fit(cover);
+  }
+  &_top {
+    @extend .img-fit;
+    & > img {
+      @include object-fit(cover, top);
+    }
+  }
+  &_bot {
+    @extend .img-fit;
+    & > img {
+      @include object-fit(cover, bottom);
+    }
+  }
+  &_contain {
+    @extend .img-fit;
+    & > img {
+      @include object-fit(contain);
+    }
+  }
+}
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  li {  
+    display: inline;
+    &:before {
+      content: none!important;
+    }
+    &.active {
+      span {
+        color: $white;
+        background-color: $secondary;  
+      }
+    }
+    a, span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;  
+      margin: $spacer $spacer/2;
+      border: $border-width solid $border-color;
+      @include media-breakpoint-up(lg) {
+        width: 45px;
+        height: 45px;  
+      }   
+    }
+  }
+}

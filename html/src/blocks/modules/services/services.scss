@@ -1,0 +1,39 @@
+.services {
+  &-card {
+    figure {
+      max-height: 270px;
+      box-shadow: 0 0 0 $secondary;
+      @include transition(0.3s $ease-out-cubic);
+      @include hover() {
+        box-shadow: $box-shadow-sm;
+        img {
+          transform: scale(1.2);
+          transition-delay: 0.1s;
+        }
+      }
+      img {
+        transform: scale(1);
+        @include transition(0.3s $ease-out-quad);
+      }
+    }
+    @include hover() {
+      p {
+        text-decoration: underline;
+      }
+    }
+  }
+  hr {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      margin-left: -6px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 12px solid $secondary;
+      filter: drop-shadow(0 0 1px $secondary);
+    }    
+  }
+}
