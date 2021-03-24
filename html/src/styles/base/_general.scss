@@ -16,6 +16,7 @@
   position: relative;
   overflow: hidden;
   &__title {
+    width: 88%;
     position: relative;
     left: 12%;
     filter: drop-shadow(0 0 3px $white);
@@ -44,6 +45,7 @@
     font-weight: 900;
   }
   &__desc {
+    width: 88%;
     position: relative;
     left: 12%;
     filter: drop-shadow(0 0 3px $white);
@@ -60,6 +62,7 @@
     }
   }
   &__subtitle {
+    width: 88%;
     position: relative;
     left: 12%;
     line-height: $line-height-lg;
@@ -117,8 +120,9 @@
     max-width: 24px;
     max-height: 24px;
   }
-  &-error {
-    display: none;
+  &-track {
+    max-width: 64px;
+    max-height: 38px;
   }
 }
 .img-fluid {

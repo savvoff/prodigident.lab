@@ -246,5 +246,6 @@ $table-cell-padding-sm: 0.3rem !default;
 $table-color: $body-color !default;
 $table-bg: null !default;
 $table-accent-bg: $gray-200 !default;
-
+$table-hover-color: $gray-600 !default;
+$table-hover-bg: transparent !default;
 @import "node_modules/bootstrap/scss/variables";
