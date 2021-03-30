@@ -13,7 +13,7 @@ const PATH = theme || "";
 class App {
   constructor() {
     this.addEventListeners();
-    $("#svg-sprites").load(`${PATH}img/sprites/sprite.svg`, (res) => res.data);
+    $("#svg-sprites").load(`${PATH}/dist/img/sprites/sprite.svg`, (res) => res.data);
     setFullHeight();
 
     new Splide("[data-splide]").mount();
