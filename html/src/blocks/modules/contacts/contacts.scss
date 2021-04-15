@@ -1,0 +1,58 @@
+.contacts {
+  .icon {
+    max-height: 18px;
+    max-width: 18px;
+  }
+}
+.cert-slider {
+  .splide__arrow {
+    fill: $secondary;
+    background: none;
+    filter: drop-shadow(0 0 1px $secondary);
+    opacity: 1;
+    &--prev {
+      left: 0;
+    }
+    &--next {
+      right: 0;
+    }
+    @include media-breakpoint-up(lg) {
+      &--prev {
+        left: -10%;
+      }
+      &--next {
+        right: -10%;
+      }
+    }
+  }
+  .splide__slide {
+    figure {
+      z-index: 1;
+      img {
+        top: 10%;
+        left: 15%;
+        @include transition(0.3s $ease-out-cubic);
+      }
+    }
+    small {      
+      height: 100%;
+      top: 20%;
+      left: 15%;
+      overflow-y: auto;
+      @include transition(0.3s $ease-out-cubic);
+      @include media-breakpoint-up(md) {
+        height: auto;
+      }
+    }
+    @include hover() {
+      img {
+        top: 0;
+        left: 0;
+      }
+      small {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+ }

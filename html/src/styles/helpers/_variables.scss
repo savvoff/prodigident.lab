@@ -158,7 +158,7 @@ $mark-bg: $red !default;
 // Buttons + Forms
 //
 $input-btn-padding-y: 1rem !default;
-$input-btn-padding-x: 2rem !default;
+$input-btn-padding-x: 1rem !default;
 $input-btn-font-family: $font-family-sans-serif !default;
 $input-btn-font-size: $font-size-base !default;
 $input-btn-line-height: $line-height-base !default;
@@ -167,12 +167,12 @@ $input-btn-focus-width: 0.2rem !default;
 $input-btn-focus-color: rgba($secondary, 0.25) !default;
 $input-btn-focus-box-shadow: 0 4px 4px $input-btn-focus-width $input-btn-focus-color !default;
 
-$input-btn-padding-y-sm: 0.25rem !default;
-$input-btn-padding-x-sm: 0.5rem !default;
+$input-btn-padding-y-sm: 0.5rem !default;
+$input-btn-padding-x-sm: 0.75rem !default;
 $input-btn-font-size-sm: $font-size-sm !default;
 $input-btn-line-height-sm: $line-height-sm !default;
 
-$input-btn-padding-y-lg: 1rem !default;
+$input-btn-padding-y-lg: 1.5rem !default;
 $input-btn-padding-x-lg: 2rem !default;
 $input-btn-font-size-lg: $font-size-lg !default;
 $input-btn-line-height-lg: $line-height-lg !default;
@@ -205,17 +205,17 @@ $btn-border-radius-sm: $border-radius-sm !default;
 $btn-font-weight: 500 !default;
 $btn-focus-box-shadow: 0 4px 4px rgba($gray-600, 0.5) !default;
 
-$input-bg: $gray-100 !default;
+$input-bg: $white !default;
 $input-disabled-bg: $gray-300 !default;
 
-$input-color: $body-color !default;
+$input-color: $gray-600 !default;
 $input-border-color: rgba($white, 0.2) !default;
 $input-border-width: $input-btn-border-width !default;
 $input-box-shadow: inset 0 1px 1px rgba($black, 0.075) !default;
 
 $input-border-radius: 0 !default;
-$input-border-radius-lg: $border-radius-lg !default;
-$input-border-radius-sm: $border-radius-sm !default;
+$input-border-radius-lg: $border-radius-lg * 0 !default;
+$input-border-radius-sm: $border-radius-sm * 0 !default;
 
 $input-focus-bg: $input-bg !default;
 $input-focus-color: $input-color !default;

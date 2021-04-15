@@ -1,0 +1,37 @@
+.about {
+  & + .page-section {
+    .arrow {
+      width: 60px;
+      cursor: if($enable-pointer-cursor-for-buttons, pointer, null);
+      span {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        margin-left: 0;
+        background-color: $secondary;
+        @include transition(0.3s $ease-out-sine);
+        &:after, &:before {
+          content: "";
+          position: absolute;
+          bottom: -1px;
+          right: 0;
+          width: 5px;
+          height: 1px;
+          transform: rotate(-40deg);
+          background-color: $secondary;
+        }
+        &:before {
+          top: -1px;
+          bottom: initial;
+          transform: rotate(40deg);
+        }
+      }
+      @include hover() {
+        span {
+          margin-left: $spacer;
+        }
+      }
+    }
+  }
+}

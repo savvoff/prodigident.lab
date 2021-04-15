@@ -16,7 +16,9 @@ class App {
     $("#svg-sprites").load(`${PATH}/dist/img/sprites/sprite.svg`, (res) => res.data);
     setFullHeight();
 
-    new Splide("[data-splide]").mount();
+    $.each($("[data-splide]"), (i, el) => {
+      window[`slider${i}`] = new Splide(el).mount();
+    });
 
     $(window).on("load", () => {
       console.log("App init\n");

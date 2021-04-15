@@ -115,6 +115,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-sm {
+  letter-spacing: 0;
+  font-weight: 400;
   @include button-size(
     $btn-padding-y-sm,
     $btn-padding-x-sm,
@@ -134,7 +136,7 @@ fieldset:disabled a.btn {
 
   // Vertically space out multiple block buttons
   + .btn-block {
-    margin-top: $btn-block-spacing-y;
+    margin-top: $btn-block-spacing-y * 2;
   }
 }
 

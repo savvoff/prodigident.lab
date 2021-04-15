@@ -1,0 +1,102 @@
+// Colors
+$c-background: $white;
+$c-text: $input-color;
+$c-hover-text: $white;
+$c-hover-background: $secondary;
+$c-selected-text: $white;
+$c-selected-background: $secondary;
+$c-border-color: $input-color;
+$c-border-between: $white;
+// Fonts
+$font-family: $font-family-sans-serif;
+$font-size: $spacer;
+// Other
+$width: 100%;
+$border-radius: 0;
+// ====================================
+.justwrap {
+  @extend .form-control-sm;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.selectbox {
+    box-sizing: border-box;
+    font-family: $font-family;
+    font-size: $font-size;
+    display: inline-block;
+    float: left;
+    background: $c-background;
+    width: $width;
+    position: relative;
+    &-options {
+        position: absolute;
+        width: 100%;
+        overflow: visible;
+        z-index: 1000;
+        &--hidden {
+            display: none;
+        }
+    }
+    &__option {
+        padding: 5px 10px;
+        cursor: pointer;
+        color: $c-text;
+        background: $c-background;
+        // border-bottom: 1px solid $c-border-between;
+        border-left: 1px solid $c-border-color;
+        border-right: 1px solid $c-border-color;
+        display: flex;
+        align-items: center;
+        transition: 100ms linear all;
+        &:first-child {
+            border-top: 1px solid $c-border-color;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+        }
+        &:last-child {
+            border-bottom: 1px solid $c-border-color;
+            border-bottom-left-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+        &:hover {
+            background: $c-hover-background;
+            color: $c-hover-text;
+        }
+        &--selected {
+            color: $c-selected-text;
+            background: $c-selected-background;
+        }
+    }
+    &__label {
+        cursor: pointer;
+        padding: $input-padding-y-sm $input-padding-x-sm;
+        background: $c-background;
+        color: $c-text;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: $border-radius;
+        border: 1px solid $c-border-color;
+        transition: 150ms linear all;
+        &:after {
+            content: "";
+            display: inline;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid $c-text;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 150ms linear all;
+        }
+        &:hover {
+            border: 1px solid $c-hover-background;
+            color: $c-hover-background;
+            &:after {
+                border-top: 6px solid $c-hover-background;
+            }
+        }
+    }
+}
