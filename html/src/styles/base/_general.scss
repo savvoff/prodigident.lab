@@ -94,6 +94,10 @@
   }
 }
 .icon {
+  &-clip {
+    max-width: 35px;
+    max-height: 35px;
+  }
   &-login {
     max-width: 26px;
     max-height: 26px;

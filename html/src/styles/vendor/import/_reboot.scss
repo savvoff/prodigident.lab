@@ -23,7 +23,6 @@ textarea {
 }
 ul:not(.list-unstyled) {
   counter-reset: list;
-  list-style: none;
   li {
     position: relative;
     line-height: $line-height-lg;   

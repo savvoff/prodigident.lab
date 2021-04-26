@@ -17,12 +17,19 @@
   }
 
   tbody tr {
+    &:first-child {
+      border-bottom: $border-width solid $secondary;
+    }
     td, th {      
       font-weight: normal;
-      padding: $table-cell-padding/2 $table-cell-padding * 2;      
+      padding: $table-cell-padding $table-cell-padding * 0;
+      border: 0;
       @include transition(border 0.3s $ease-out-cubic);
       &[scope="row"] {
         text-align: left;
+      }
+      &:first-child {
+        border-right: $border-width solid $secondary;
       }
     }
   }
