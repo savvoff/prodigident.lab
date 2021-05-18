@@ -39,6 +39,16 @@ export function setFullHeight() {
   $("html").attr("style", `--vh: ${vh}px`);
 }
 
+export function toTop(el) {
+  $(el).on("click", () => {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+ });
+}
+
+export function showScrollEl(el) {
+  $(document).scrollTop() > $(window).height() ? $(el).addClass("is-show") : $(el).removeClass("is-show");
+}
+
 export function randomInt(min, max) {
   const rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);

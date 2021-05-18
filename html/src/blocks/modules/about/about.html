@@ -8,9 +8,15 @@
         <h5 class="page-section__subtitle text-plain mb-lg-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem nisl, varius non egestas sit amet, consectetur ac massa. Phasellus tortor erat, aliquet et gravida nec, pellentesque vel ex. Ut scelerisque, ligula at ullamcorper semper, sapien massa vehicula ante, a fermentum tellus diam eget elit. Aenean commodo vehicula est vitae iaculis. Nam eget turpis sit amet nunc convallis vehicula. Duis aliquam lacinia dapibus. Morbi varius at sem non consequat. Aliquam elit tortor, pharetra ut viverra sed, posuere vitae ante. Aenean commodo ultrices rhoncus. Mauris dapibus risus quis fringilla ultrices. Donec eu purus ut felis molestie pharetra at quis turpis. Donec luctus lorem imperdiet, lobortis magna in, tempus lacus. Maecenas placerat lectus ex, et sodales orci rhoncus non. Sed aliquam nulla ut lectus ornare, eu congue metus tempus.
         </h5>
-        <p class="h3 page-section__subtitle main-legend text-center text-dark-light overflow-hidden text-uppercase text-plain">
-          <span class="px-2">worldwide dental implant Planning service</span>
-        </p> 
+        <div class="page-section__subtitle row text-center">
+          <div class="col"><hr></div>
+          <div class="col-12 col-lg">
+            <h3 class="text-dark-light text-uppercase text-plain mb-0">
+              worldwide dental implant Planning service
+            </h3>
+          </div>
+          <div class="col"><hr></div>
+        </div>
         <div class="d-flex justify-content-end">
           <a href="#" class="btn btn-secondary text-uppercase align-self-end px-5 my-3">Contact us</a>
         </div>
@@ -30,7 +36,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-lg-5">
-        <div class="splide spec-slider" data-splide='{"type": "loop", "pagination": false, "arrows": false}'>
+        <div class="splide spec-slider" data-splide='{"type": "loop", "pagination": false, "arrows": false, "autoplay": true, "interval": 5000, "pauseOnHover": false}'>
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide mr-3">
@@ -93,39 +99,43 @@
     </div>
     <div class="row">
       <div class="col-12 col-lg-7 offset-lg-3">
-        <div class="splide cert-slider" data-splide='{"type": "loop", "autoplay": false, "interval": 6000, "pagination": false, "arrowPath": "M4.24994 20.5L4.24994 0.409044L43.4518 20.5L4.24994 40.591L4.24994 20.5Z"}'>
+        <div class="splide cert-slider" data-splide='{"type": "loop", "autoplay": false, "interval": 6000, "pagination": false, "arrowPath": "M32.9999 15L3.99994 -1.26763e-06L3.99994 15L3.99994 30L32.9999 15Z"}'>
           <div class="splide__track py-5">
             <ul class="splide__list">
-              <li class="splide__slide d-flex px-4 px-sm-0 mr-3">
-                <figure class="position-relative border border-secondary ratio-2x3 img-fit w-50">
+              <li class="splide__slide d-flex px-4 px-sm-0 mr-3" data-text="Certifies that the product complies with the essential requirements 
+              of the EU directives and the harmonized standards of the European Union, 
+              and that the product has passed the directive conformity assessment procedure">
+                <figure class="position-relative ratio-2x3 img-fit w-50">
                   <img class="position-absolute img-fluid mb-n4" src="//placehold.it/200x300" alt="man">
                 </figure>
-                <div class="ratio-1x1 w-50 my-auto">
-                  <small class="position-absolute bg-light p-2 p-md-5">
-                    Certifies that the product complies with the essential requirements 
-                    of the EU directives and the harmonized standards of the European Union, 
-                    and that the product has passed the directive conformity assessment procedure
-                  </small>
-                </div>
               </li>
-              <li class="splide__slide d-flex px-4 px-sm-0 mr-3">
-                <figure class="position-relative border border-secondary ratio-2x3 img-fit w-50">
+              <li class="splide__slide d-flex px-4 px-sm-0 mr-3" data-text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, voluptatem.">
+                <figure class="position-relative ratio-2x3 img-fit w-50">
                   <img class="position-absolute img-fluid mb-n4" src="//placehold.it/200x300" alt="man">
-                </figure>
-                <div class="ratio-1x1 w-50 my-auto">
-                  <small class="position-absolute bg-light p-2 p-md-5">
-                    Certifies that the product complies with the essential requirements 
-                    of the EU directives and the harmonized standards of the European Union, 
-                    and that the product has passed the directive conformity assessment procedure
-                  </small>
-                </div>
+                </figure>                
               </li>
             </ul>
+          </div>
+          <div class="cert-info mt-n5">
+            <small class="position-absolute bg-light w-100 p-2 p-md-5">
+              Certifies that the product complies with the essential requirements 
+              of the EU directives and the harmonized standards of the European Union, 
+              and that the product has passed the directive conformity assessment procedure
+            </small>
           </div>
         </div>
       </div>
     </div>
   </div>  
+  <script>
+    function setText() {
+      var currentSlide = slider1.root.querySelector(".is-active");
+      document.querySelector(".cert-info small").innerText = currentSlide.dataset.text;
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      slider1.on("moved", setText);
+    });
+  </script>
 </section>
 
 <section class="page-section pb-4 pb-lg-6">
@@ -138,50 +148,71 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-lg-4">
-        <a href="#" class="d-block border border-secondary bg-white px-2 pt-3">
-          <figure class="position-relative img-fit img-fit_contain ratio-1x1 mb-0">
-            <div class="main-event__label px-2 pt-5 pb-2">
-              25.03
-              <hr class="border-light my-1">
-              2021
-            </div>
-            <img class="position-absolute img-fluid" src="//placehold.it/200x200" width="" height="" alt="">
-          </figure>
-          <div class="text-center text-primary p-4">
-            ImplaStation On Cowell International Conference, 02-03 November 2019, Jeju-Korea
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-lg-4">
-        <a href="#" class="d-block border border-secondary bg-white px-2 pt-3">
-          <figure class="position-relative img-fit img-fit_contain ratio-1x1 mb-0">
-            <div class="main-event__label px-2 pt-5 pb-2">
-              13.07
-              <hr class="border-light my-1">
-              2021
-            </div>
-            <img class="position-absolute img-fluid" src="//placehold.it/200x200" width="" height="" alt="">
-          </figure>
-          <div class="text-center text-primary p-4">
-            ImplaStation On Cowell International Conference, 02-03 November 2019, Jeju-Korea
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-lg-4">
-        <a href="#" class="d-block border border-secondary bg-white px-2 pt-3">
-          <figure class="position-relative img-fit img-fit_contain ratio-1x1 mb-0">
-            <div class="main-event__label px-2 pt-5 pb-2">
-              02.11
-              <hr class="border-light my-1">
-              2021
-            </div>
-            <img class="position-absolute img-fluid" src="//placehold.it/200x200" width="" height="" alt="">
-          </figure>
-          <div class="text-center text-primary p-4">
-            ImplaStation On Cowell International Conference, 02-03 November 2019, Jeju-Korea
-          </div>
-        </a>
+      <div class="splide event-slider w-100" data-splide='{"rewind": true, "padding": 30, "gap": "2rem", "arrows": false, "autoplay": true, "interval": 5000, "pauseOnHover": false, "perPage": 3}'>
+        <div class="splide__track py-4 mb-3">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <a href="#" class="red-shadow d-block border border-secondary bg-white px-2 pt-3">
+                <figure class="position-relative img-fit img-fit_contain ratio-1x1 mb-0">
+                  <div class="main-event__label px-2 pt-5 pb-2">
+                    25.03
+                    <hr class="border-light my-1">
+                    2021
+                  </div>
+                  <img class="position-absolute img-fluid" src="//placehold.it/200x200" width="" height="" alt="">
+                </figure>
+                <div class="text-center text-primary p-4">
+                  ImplaStation On Cowell International Conference, 02-03 November 2019, Jeju-Korea
+                </div>
+              </a>
+            </li>
+            <li class="splide__slide">
+              <a href="#" class="red-shadow d-block border border-secondary bg-white px-2 pt-3">
+                <figure class="position-relative img-fit img-fit_contain ratio-1x1 mb-0">
+                  <div class="main-event__label px-2 pt-5 pb-2">
+                    25.03
+                    <hr class="border-light my-1">
+                    2021
+                  </div>
+                  <img class="position-absolute img-fluid" src="//placehold.it/200x200" width="" height="" alt="">
+                </figure>
+                <div class="text-center text-primary p-4">
+                  ImplaStation On Cowell International Conference, 02-03 November 2019, Jeju-Korea
+                </div>
+              </a>
+            </li>
+            <li class="splide__slide">
+              <a href="#" class="red-shadow d-block border border-secondary bg-white px-2 pt-3">
+                <figure class="position-relative img-fit img-fit_contain ratio-1x1 mb-0">
+                  <div class="main-event__label px-2 pt-5 pb-2">
+                    25.03
+                    <hr class="border-light my-1">
+                    2021
+                  </div>
+                  <img class="position-absolute img-fluid" src="//placehold.it/200x200" width="" height="" alt="">
+                </figure>
+                <div class="text-center text-primary p-4">
+                  ImplaStation On Cowell International Conference, 02-03 November 2019, Jeju-Korea
+                </div>
+              </a>
+            </li>
+            <li class="splide__slide">
+              <a href="#" class="red-shadow d-block border border-secondary bg-white px-2 pt-3">
+                <figure class="position-relative img-fit img-fit_contain ratio-1x1 mb-0">
+                  <div class="main-event__label px-2 pt-5 pb-2">
+                    25.03
+                    <hr class="border-light my-1">
+                    2021
+                  </div>
+                  <img class="position-absolute img-fluid" src="//placehold.it/200x200" width="" height="" alt="">
+                </figure>
+                <div class="text-center text-primary p-4">
+                  ImplaStation On Cowell International Conference, 02-03 November 2019, Jeju-Korea
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>  

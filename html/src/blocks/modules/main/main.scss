@@ -7,7 +7,7 @@
    margin: auto;
    text-align: right;
    @include media-breakpoint-up(lg) {
-     &:after, &:before {
+     &:after {
        content: "";
        position: absolute;
        top: 0;
@@ -18,37 +18,70 @@
        @supports (backdrop-filter: blur(10px)) {
         backdrop-filter: blur(10px);
        }
-     }
-     &:before {
-      width: 100%;
-      top: initial;
-      bottom: 0;
-      height: 10%;
-     }
+     }     
    }
    img {
      position: relative;
-     max-width: 100%;
-     left: 15%;
+     width: 100%;
+     left: 20%;
      text-align: right;
+     max-width: 850px;
+     @include media-breakpoint-up(md) {
+       left: 40%;
+     }
+     @include media-breakpoint-up(lg) {
+       left: 20%;
+     }
+     @include media-breakpoint-up(2xl) {
+       width: auto;
+       max-width: 100%;
+       left: 15%;
+     }
    }
  }
  &-legend {
    position: relative;
-   z-index: 1;
-   span {
+   .text-plain {
+     z-index: 1;
      background-color: $white;
+     @include media-breakpoint-up(lg) {
+      white-space: nowrap;
+      background-color: transparent;
+     }
    }
-   &:before {
-     content: "";
-     top: 50%;
-     left: 0;
+   hr {
      position: absolute;
+     left: 0;
+     top: 50%;
+     margin: 0;
      width: 100%;
-     height: $border-width;
-     background-color: $gray-600;
-     z-index: -1;
    }
+  //  &:before {
+  //    content: "";
+  //    top: 50%;
+  //    left: 0;
+  //    position: absolute;
+  //    width: 100%;
+  //    height: $border-width;
+  //    background-color: $gray-600;
+  //    z-index: -1;
+  //  }
+  @include media-breakpoint-up(lg) {
+    .row {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 300%;
+        @supports (backdrop-filter: blur(10px)) {
+         backdrop-filter: blur(10px);
+        }
+      }     
+    }
+  }
  }
  &-roadmap {
    &-step {
@@ -73,10 +106,12 @@
       border-right: 6px solid transparent;
       border-top: 12px solid $white;
       filter: drop-shadow(0 0 1px $secondary);
+      @include transition(0.3s $ease-out-cubic);
      }
-     &.active {
+     &:hover {
       &:after {
         border-top: 12px solid $secondary;
+        filter: drop-shadow(0 0 3px $secondary);
       }
      }
      .bg-light {
@@ -111,7 +146,6 @@
   .splide__arrow {
     fill: $secondary;
     background: none;
-    filter: drop-shadow(0 0 1px $secondary);
     opacity: 1;
     @include media-breakpoint-up(lg) {
       &--prev {

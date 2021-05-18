@@ -34,7 +34,15 @@ function moveBorderSlideToActive() {
         left: $activeEl.first().position().left,
         width: $activeEl.width()
       });
-  } else $(".slide-border").remove();
+  } else {
+    let $defaultEl = $(".page-header__menu li");
+    $(".slide-border")
+      .stop()
+      .css({
+        left: $defaultEl.first().position().left,
+        width: $defaultEl.width()
+      });
+  }
 }
 
 $(".page-header__menu li").on("mouseover", moveBorderSlide);

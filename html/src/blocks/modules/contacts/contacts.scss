@@ -44,15 +44,15 @@
         height: auto;
       }
     }
-    @include hover() {
-      img {
-        top: 0;
-        left: 0;
-      }
-      small {
-        top: 0;
-        left: 0;
-      }
-    }
+    // @include hover() {
+    //   img {
+    //     top: 0;
+    //     left: 0;
+    //   }
+    //   small {
+    //     top: 0;
+    //     left: 0;
+    //   }
+    // }
   }
  }

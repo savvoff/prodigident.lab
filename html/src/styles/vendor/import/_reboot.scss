@@ -5,6 +5,8 @@ a {
   &:not([href]) {
     color: $link-color;
   }
+  @include fluid($vw-1920, $vw-2560, $font-size-base, $font-size-base * 1.5);
+  @include fluid($vw-576, $vw-1200, $font-size-sm, $font-size-base);
 }
 iframe,
 embed,

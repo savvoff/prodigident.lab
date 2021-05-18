@@ -2,6 +2,8 @@ import "./import/modules";
 import {
   setFullHeight,
   fillInput,
+  toTop,
+  showScrollEl
 } from "./import/helpers";
 
 // Custom plugins
@@ -21,7 +23,11 @@ class App {
     });
 
     $(window).on("load", () => {
+      toTop("[class*=to-top]");
       console.log("App init\n");
+    });
+    $(window).on("scroll", () => {
+      showScrollEl(".btn-to-top");
     });
     $(window).on("resize", () => {
       setFullHeight();

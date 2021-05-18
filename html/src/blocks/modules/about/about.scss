@@ -35,3 +35,20 @@
     }
   }
 }
+.cert-slider {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    @extend .my-5;
+    border: $border-width solid $secondary;
+  }
+}
+.cert-info {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: calc(50% - #{$spacer * 4});
+  transform: translateY(-50%);
+}

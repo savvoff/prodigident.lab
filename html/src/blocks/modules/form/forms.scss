@@ -268,6 +268,7 @@ textarea.form-control {
     @include transition(0.3s $ease-out-circ);
   }    
   :checked ~ & {
+    border: $border-width solid $secondary;
     transition-delay: 0.05s;
     background-size: 100%;
     &:before {

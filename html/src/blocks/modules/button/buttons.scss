@@ -87,7 +87,21 @@ fieldset:disabled a.btn {
 // Link buttons
 //
 // Make a button look and behave like a link
-
+.btn-to-top {
+  position: fixed;
+  right: $spacer;
+  bottom: -$spacer * 5;
+  z-index: $zindex-fixed;
+  &.is-show {
+    bottom: $spacer;
+  }
+  span {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid $white;
+    @include transition(0.3s $ease-out-cubic);
+  }
+}
 .btn-close,
 .link-close {
   border: none;
