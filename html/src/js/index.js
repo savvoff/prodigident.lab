@@ -8,7 +8,8 @@ import {
 
 // Custom plugins
 import "simplebar";
-import Splide from '@splidejs/splide';
+import Splide from "@splidejs/splide";
+import { Luminous } from "luminous-lightbox";
 // Constants
 const PATH = theme || "";
 
@@ -17,6 +18,10 @@ class App {
     this.addEventListeners();
     $("#svg-sprites").load(`${PATH}/dist/img/sprites/sprite.svg`, (res) => res.data);
     setFullHeight();
+
+    $("[data-zoomable]").each(function() {
+      new Luminous($(this).get(0), { sourceAttribute: "data-href" });
+    })
 
     $.each($("[data-splide]"), (i, el) => {
       window[`slider${i}`] = new Splide(el).mount();

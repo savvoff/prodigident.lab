@@ -75,9 +75,9 @@
     "@splidejs/splide": "^2.4.21",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
+    "luminous-lightbox": "^2.3.3",
     "mobile-device-detect": "^0.3.3",
     "object-fit-images": "^3.2.4",
-    "simplebar": "^5.1.0",
-    "zooming": "^2.1.1"
+    "simplebar": "^5.1.0"
   }
 }
