@@ -3,6 +3,7 @@ import {
   setFullHeight,
   fillInput,
   toTop,
+  isCheckCondition,
   showScrollEl
 } from "./import/helpers";
 
@@ -10,6 +11,7 @@ import {
 import "simplebar";
 import Splide from "@splidejs/splide";
 import { Luminous } from "luminous-lightbox";
+import { check } from "yargs";
 // Constants
 const PATH = theme || "";
 
@@ -40,6 +42,7 @@ class App {
   }
   addEventListeners() {
     $(".form__input").on("blur input", fillInput);
+    $("[data-group]").on("change", isCheckCondition);
   }
 }
 

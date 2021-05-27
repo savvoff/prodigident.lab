@@ -79,3 +79,11 @@ export function fillInput(ev) {
     });
   }
 }
+
+export function isCheckCondition(ev) {
+  const groupId = $(ev.currentTarget).data("group");
+  const collection = $(ev.currentTarget).closest(".form-row").find(`[data-group="${groupId}"]`);
+  $.each(collection, (i, el) => {
+    if (ev.currentTarget != el) $(el).prop('checked', false);
+  });
+}
