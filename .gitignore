@@ -12,7 +12,7 @@
 
 # production
 # dist
-
+html/dist/*.*
 # ftp + archives
 .ftpconfig
 *.zip
