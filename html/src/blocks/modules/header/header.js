@@ -25,6 +25,7 @@ function moveBorderSlide() {
 function moveBorderSlideToActive() {
   if (deviceDetect("mobile")) return;
   if ($(".page-header__menu .current-menu-item").length) {
+    $(".page-header__menu").addClass("has-active");
     let $activeEl = $(".page-header__menu .current-menu-item");
     if ($activeEl.closest(".menu-item-has-children").length)
       $activeEl = $activeEl.closest(".menu-item-has-children");

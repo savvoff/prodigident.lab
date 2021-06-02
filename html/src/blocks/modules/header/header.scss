@@ -23,13 +23,14 @@
     @include media-breakpoint-up(lg) {
       position: relative;
       background-color: transparent;
-      transform: translateY(0);
+      transform: translateY(0);      
       .slide-border {
         position: absolute;
         width: 100px;
         left: 0;
         bottom: 0;
         transition: 0.3s;
+        opacity: 0;
         &:after {
           content: "";
           position: absolute;
@@ -39,6 +40,16 @@
           border-left: 6px solid transparent;
           border-right: 6px solid transparent;
           border-bottom: 12px solid $secondary;
+        }
+      }
+      @include hover() {
+        .slide-border {
+          opacity: 1;
+        }
+      }
+      &.has-active {
+        .slide-border {
+          opacity: 1;
         }
       }
     }
@@ -117,7 +128,7 @@
           ul {
             top: 100%;
             visibility: visible;
-            opacity: 1;
+            opacity: 1;            
           }
         }
       }
