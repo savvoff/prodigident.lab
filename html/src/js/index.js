@@ -4,14 +4,14 @@ import {
   fillInput,
   toTop,
   isCheckCondition,
-  showScrollEl
+  showScrollEl,
+  checkZoom
 } from "./import/helpers";
 
 // Custom plugins
 import "simplebar";
 import Splide from "@splidejs/splide";
 import { Luminous } from "luminous-lightbox";
-import { check } from "yargs";
 // Constants
 const PATH = theme || "";
 
@@ -20,6 +20,7 @@ class App {
     this.addEventListeners();
     $("#svg-sprites").load(`${PATH}/dist/img/sprites/sprite.svg`, (res) => res.data);
     setFullHeight();
+    checkZoom();
 
     $("[data-zoomable]").each(function() {
       new Luminous($(this).get(0), { sourceAttribute: "data-href" });

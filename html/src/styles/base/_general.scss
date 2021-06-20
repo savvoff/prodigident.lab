@@ -3,15 +3,18 @@
   max-width: 100%;
   background: linear-gradient(180deg, $white, $gray-200);
   @include transition(opacity 0.3s linear);
+  .zoom-125 & {
+    zoom: 80%;
+  }
   .is-loaded & {
     visibility: visible;
     opacity: 1;
   }  
 }
 .red-shadow {
-  box-shadow: 0 0 0 rgba($red, 0.5);
+  box-shadow: 0 0 0 rgba($red, 0.3);
   @include hover-focus() {
-    box-shadow: 0 4px 4px rgba($red, 0.5);
+    box-shadow: 0 4px 4px rgba($red, 0.3);
   }
 }
 
@@ -22,19 +25,28 @@
 .page-section {
   position: relative;
   overflow: hidden;
-  &__title {
-    width: 88%;
-    position: relative;
-    left: 12%;
+  .line-indent {
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      left: 90px;
+      width: calc(100% - 90px);
+    }
+  }
+  &__title {    
     filter: drop-shadow(0 0 3px $white);
+    @include media-breakpoint-up(lg) {
+      width: calc(100% - 90px);
+      position: relative;    
+      left: 90px;
+    }
     &:before {
       position: absolute;
       content: "";      
       @include fluid($vw-1600, $vw-2560, $spacer * 2, $spacer * 3.5, 'top');
       @include fluid($vw-576, $vw-1200, $spacer * 1.5, $spacer * 2, 'top');
-      left: -12%;
+      left: -90px;
       margin-top: -2.5px;
-      width: 12%;
+      width: 90px;
       height: 5px;
       background-color: $secondary;
     }
@@ -52,27 +64,31 @@
     font-weight: 900;
   }
   &__desc {
-    width: 88%;
-    position: relative;
-    left: 12%;
     filter: drop-shadow(0 0 3px $white);
+    @include media-breakpoint-up(lg) {
+      width: calc(100% - 90px);
+      position: relative;    
+      left: 90px;
+    }
     &:before {
       position: absolute;
       content: "";      
       @include fluid($vw-1600, $vw-2560, $spacer * 1.5, $spacer * 2, 'top');
       @include fluid($vw-576, $vw-1200, $spacer / 1.25, $spacer * 1.5, 'top');
-      left: -12%;
+      left: -90px;
       margin-top: -2.5px;
-      width: 12%;
+      width: 90px;
       height: 5px;
       background-color: $secondary;
     }
   }
   &__subtitle {
-    width: 88%;
-    position: relative;
-    left: 12%;
     line-height: $line-height-lg;
+    @include media-breakpoint-up(lg) {
+      width: calc(100% - 90px);
+      position: relative;    
+      left: 90px;
+    }
   }
 }
 .ratio-16x9 {
@@ -83,6 +99,9 @@
 }
 .ratio-1x1 {
   @include aspect-ratio(1, 1);
+}
+.ratio-4x3 {
+  @include aspect-ratio(4, 3);
 }
 @for $i from 1 through 10 {
   .is-#{$i*10}-height {

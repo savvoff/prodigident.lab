@@ -27,6 +27,7 @@
       font-weight: normal;
       padding: $table-cell-padding $table-cell-padding * 2;
       border: 0;
+      vertical-align: middle;
       @include transition(border 0.3s $ease-out-cubic);
       &[scope="row"] {
         text-align: left;

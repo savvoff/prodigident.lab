@@ -3,9 +3,6 @@ const webpack = require('webpack');
 import { paths } from "./gulpfile.babel";
 
 module.exports = {
-  node: {
-    fs: 'empty'
-  },
   plugins: [
     new webpack.ProvidePlugin({
       jQuery: 'jquery',

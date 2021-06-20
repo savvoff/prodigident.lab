@@ -54,6 +54,23 @@ export function randomInt(min, max) {
   return Math.floor(rand);
 }
 
+export function checkZoom() {
+  const dpr = window.devicePixelRatio;
+  const getZoomStr = (val) => val.toString().split(".").join("")
+  let className = "";
+  let classNamePrefix = "zoom-";
+  switch (dpr) {
+    case 1.25: 
+      className = classNamePrefix + getZoomStr(dpr);
+      break;
+    case 1.5:
+      className = classNamePrefix + getZoomStr(dpr);
+    default:
+      break;
+  }
+  $("html").addClass(className);
+}
+
 export function fillInput(ev) {
   makeActive();
   let el = $(ev.currentTarget);

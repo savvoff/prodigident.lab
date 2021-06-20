@@ -20,8 +20,8 @@ gulp.task("views", () => {
         basepath: "@file"
       })
     )
-    .pipe(gulpif(production, replace(".css", ".min.css")))
-    .pipe(gulpif(production, replace(".js", ".min.js")))
+    .pipe(gulpif(production, replace(".css", ".css")))
+    .pipe(gulpif(production, replace(".js", ".js")))
     .pipe(gulp.dest(paths.views.dist))
     .pipe(browsersync.stream());
 });
