@@ -124,7 +124,7 @@
               of the EU directives and the harmonized standards of the European Union, 
               and that the product has passed the directive conformity assessment procedure">
                 <figure class="position-relative ratio-2x3 img-fit w-50" data-zoomable data-href="//placehold.it/1200x730">
-                  <img class="position-absolute img-fluid mb-n4" src="//placehold.it/600x330" alt="man">
+                  <img class="position-absolute img-fluid mb-n4" src="//placehold.it/600x330" alt="man" data-zoomable>
                 </figure>
               </li>
               <li class="splide__slide d-flex px-4 px-sm-0 mr-3" data-text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, voluptatem.">
@@ -134,11 +134,8 @@
               </li>
             </ul>
           </div>
-          <div class="cert-info mt-n5">
-            <small class="position-absolute bg-light w-100 p-2 p-md-5">
-              Certifies that the product complies with the essential requirements 
-              of the EU directives and the harmonized standards of the European Union, 
-              and that the product has passed the directive conformity assessment procedure
+          <div class="cert-info">
+            <small class="d-inline-block bg-light p-2 p-md-4">
             </small>
           </div>
         </div>
@@ -148,9 +145,10 @@
   <script>
     function setText() {
       var currentSlide = slider1.root.querySelector(".is-active");
-      document.querySelector(".cert-info small").innerText = currentSlide.dataset.text;
+      document.querySelector(".cert-info small").innerHTML = currentSlide.dataset.text;
     }
     document.addEventListener("DOMContentLoaded", function() {
+      setText();
       slider1.on("moved", setText);
     });
   </script>
