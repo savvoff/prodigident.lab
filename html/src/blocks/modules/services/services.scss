@@ -8,7 +8,7 @@
       @include hover() {
         box-shadow: $box-shadow-sm;
         img {
-          transform: scale(1.05);     
+          transform: scale(1.05);
         }
       }
       img {
@@ -34,6 +34,6 @@
       border-right: 6px solid transparent;
       border-top: 12px solid $secondary;
       filter: drop-shadow(0 0 1px $secondary);
-    }    
+    }
   }
 }

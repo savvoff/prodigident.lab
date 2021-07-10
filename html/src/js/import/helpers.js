@@ -13,21 +13,25 @@ export function deviceDetect(type) {
 
 export function blockScroll() {
   let scrollPosition = [
-    self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
-    self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+    self.pageXOffset ||
+      document.documentElement.scrollLeft ||
+      document.body.scrollLeft,
+    self.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop,
   ];
   let html = $("html"); // it would make more sense to apply this to body, but IE7 won't have that
   html.data("scroll-position", scrollPosition);
   html.data("previous-overflow", html.css("overflow"));
   html.css("overflow", "hidden");
-  window.scrollTo(scrollPosition[0], scrollPosition[1]);;
+  window.scrollTo(scrollPosition[0], scrollPosition[1]);
 }
 
 export function unblockScroll() {
   let html = $("html");
   let scrollPosition = html.data("scroll-position");
   html.css("overflow", html.data("previous-overflow"));
-  window.scrollTo(scrollPosition[0], scrollPosition[1])
+  window.scrollTo(scrollPosition[0], scrollPosition[1]);
 }
 
 window.deviceDetect = deviceDetect;
@@ -42,11 +46,13 @@ export function setFullHeight() {
 export function toTop(el) {
   $(el).on("click", () => {
     $("html, body").animate({ scrollTop: 0 }, 1000);
- });
+  });
 }
 
 export function showScrollEl(el) {
-  $(document).scrollTop() > $(window).height() ? $(el).addClass("is-show") : $(el).removeClass("is-show");
+  $(document).scrollTop() > $(window).height()
+    ? $(el).addClass("is-show")
+    : $(el).removeClass("is-show");
 }
 
 export function randomInt(min, max) {
@@ -56,11 +62,11 @@ export function randomInt(min, max) {
 
 export function checkZoom() {
   const dpr = window.devicePixelRatio;
-  const getZoomStr = (val) => val.toString().split(".").join("")
+  const getZoomStr = (val) => val.toString().split(".").join("");
   let className = "";
   let classNamePrefix = "zoom-";
   switch (dpr) {
-    case 1.25: 
+    case 1.25:
       className = classNamePrefix + getZoomStr(dpr);
       break;
     case 1.5:
@@ -98,9 +104,18 @@ export function fillInput(ev) {
 }
 
 export function isCheckCondition(ev) {
+  const switchOnId = $(ev.currentTarget).data("switchon");
+  if (switchOnId) {
+    $(ev.currentTarget).prop("checked")
+      ? $(`#${switchOnId}`).prop("disabled", false)
+      : ($(`#${switchOnId}`).prop("disabled", true),
+        $(`#${switchOnId}`).prop("checked", false));
+  }
   const groupId = $(ev.currentTarget).data("group");
-  const collection = $(ev.currentTarget).closest(".form-row").find(`[data-group="${groupId}"]`);
+  const collection = $(ev.currentTarget)
+    .closest(".form-row")
+    .find(`[data-group="${groupId}"]`);
   $.each(collection, (i, el) => {
-    if (ev.currentTarget != el) $(el).prop('checked', false);
+    if (ev.currentTarget != el) $(el).prop("checked", false);
   });
 }
