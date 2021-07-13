@@ -105,11 +105,16 @@ export function fillInput(ev) {
 
 export function isCheckCondition(ev) {
   const switchOnId = $(ev.currentTarget).data("switchon");
+  const collectionSwitchOnId = $(ev.currentTarget)
+    .closest(".form-row")
+    .find(`[data-switchon]`);
+  $.each(collectionSwitchOnId, (i, el) => {
+    $(`#${el.dataset.switchon}`).prop({"disabled": true, "checked": false});
+  });
   if (switchOnId) {
     $(ev.currentTarget).prop("checked")
       ? $(`#${switchOnId}`).prop("disabled", false)
-      : ($(`#${switchOnId}`).prop("disabled", true),
-        $(`#${switchOnId}`).prop("checked", false));
+      : $(`#${switchOnId}`).prop({"disabled": true, "checked": false});
   }
   const groupId = $(ev.currentTarget).data("group");
   const collection = $(ev.currentTarget)
