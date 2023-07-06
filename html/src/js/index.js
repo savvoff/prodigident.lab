@@ -5,6 +5,7 @@ import {
   toTop,
   isCheckCondition,
   showScrollEl,
+  toggleEl,
   checkZoom
 } from "./import/helpers";
 
@@ -18,7 +19,7 @@ const PATH = theme || "";
 class App {
   constructor() {
     this.addEventListeners();
-    $("#svg-sprites").load(`${PATH}/dist/img/sprites/sprite.svg`, (res) => res.data);
+    $("#svg-sprites").load(`${PATH}/img/sprites/sprite.svg`, (res) => res.data);
     setFullHeight();
     checkZoom();
 
@@ -44,6 +45,7 @@ class App {
   addEventListeners() {
     $(".form__input").on("blur input", fillInput);
     $("[data-group]").on("change", isCheckCondition);
+    $("[data-toggle]").on("click", toggleEl);
   }
 }
 

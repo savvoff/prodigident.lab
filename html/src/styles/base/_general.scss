@@ -9,7 +9,7 @@
   .is-loaded & {
     visibility: visible;
     opacity: 1;
-  }  
+  }
 }
 .red-shadow {
   box-shadow: 0 0 0 rgba($red, 0.3);
@@ -32,16 +32,16 @@
       width: calc(100% - 90px);
     }
   }
-  &__title {    
+  &__title {
     filter: drop-shadow(0 0 3px $white);
     @include media-breakpoint-up(lg) {
       width: calc(100% - 90px);
-      position: relative;    
+      position: relative;
       left: 90px;
     }
     &:before {
       position: absolute;
-      content: "";      
+      content: "";
       @include fluid($vw-1600, $vw-2560, $spacer * 2, $spacer * 3.5, 'top');
       @include fluid($vw-576, $vw-1200, $spacer * 1.5, $spacer * 2, 'top');
       left: -90px;
@@ -67,14 +67,14 @@
     filter: drop-shadow(0 0 3px $white);
     @include media-breakpoint-up(lg) {
       width: calc(100% - 90px);
-      position: relative;    
+      position: relative;
       left: 90px;
     }
     &:before {
       position: absolute;
-      content: "";      
-      @include fluid($vw-1600, $vw-2560, $spacer * 1.5, $spacer * 2, 'top');
-      @include fluid($vw-576, $vw-1200, $spacer / 1.25, $spacer * 1.5, 'top');
+      content: "";
+      @include fluid($vw-1600, $vw-2560, $spacer * 1.125, $spacer * 2, 'top');
+      @include fluid($vw-576, $vw-1200, $spacer / 1.125, $spacer * 1.125, 'top');
       left: -90px;
       margin-top: -2.5px;
       width: 90px;
@@ -86,7 +86,7 @@
     line-height: $line-height-lg;
     @include media-breakpoint-up(lg) {
       width: calc(100% - 90px);
-      position: relative;    
+      position: relative;
       left: 90px;
     }
   }
@@ -106,7 +106,7 @@
 @for $i from 1 through 10 {
   .is-#{$i*10}-height {
     min-height: #{$i * 10}vh;
-    min-height: calc(var(--vh, 1vh) * #{$i * 10});  
+    min-height: calc(var(--vh, 1vh) * #{$i * 10});
     &.is-limit {
       height: 1px;
       max-height: #{$i * 10}vh;
@@ -193,7 +193,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  li {  
+  li {
     display: inline;
     &:before {
       content: none!important;
@@ -201,7 +201,7 @@
     &.active {
       span {
         color: $white;
-        background-color: $secondary;  
+        background-color: $secondary;
       }
     }
     a, span {
@@ -209,13 +209,13 @@
       align-items: center;
       justify-content: center;
       width: 35px;
-      height: 35px;  
+      height: 35px;
       margin: $spacer $spacer/2;
       border: $border-width solid $border-color;
       @include media-breakpoint-up(lg) {
         width: 45px;
-        height: 45px;  
-      }   
+        height: 45px;
+      }
     }
   }
 }

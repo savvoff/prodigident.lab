@@ -43,6 +43,11 @@ export function setFullHeight() {
   $("html").attr("style", `--vh: ${vh}px`);
 }
 
+export function toggleEl(ev) {
+  let target = $(ev.currentTarget).data("toggle");
+  $(`#${target}`).toggle();
+}
+
 export function toTop(el) {
   $(el).on("click", () => {
     $("html, body").animate({ scrollTop: 0 }, 1000);

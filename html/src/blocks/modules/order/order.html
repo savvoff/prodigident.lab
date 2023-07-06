@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-lg-11 offset-lg-1">
+      <form class="col-12 col-lg-11 offset-lg-1">
         <p class="text-dark-light">Заполните, пожалуйста, форму заказа:</p>
         <div class="form-group mb-3">
           <input class="form-control border border-dark-light" type="text" name="user" id="user" placeholder="ФИО доктора/лаборатория">
@@ -75,6 +75,105 @@
         </div>
         <div class="form-group mb-3">
           <input class="form-control border border-dark-light" type="text" name="directimptypeher" id="directimptypeher" placeholder="Тип:">
+        </div>
+        <h3 class="text-uppercase">БАГАТОСКЛАДОВИЙ ШАБЛОН:</h3>
+        <div class="form-group form-check form-check-inline mb-3">
+          <input class="form-control form-check" type="checkbox" id="stackableguide" data-toggle="stacked">
+          <span class="custom-check"></span>
+        </div>
+        <div id="stacked" style="display:none">
+          <div class="form-group mb-3">
+            <select class="form-control border border-dark-light justselect" name="stackablelayout">
+              <option value="" selected disabled>Выберіть шаблон</option>
+              <option value="cocr">ШАБЛОН З СoCr</option>
+              <option value="resin">ШАБЛОН З КОМПОЗИТУ</option>
+            </select>
+          </div>
+          <h4 class="text-uppercase">ФІКСУЮЧІ ПІНИ/ФРЕЗА</h4>
+          <div class="form-group form-check form-check-inline mb-3">
+            <input class="form-control form-check" type="checkbox" name="fixingpins" id="fixingpins" data-toggle="fixingbrand">
+            <span class="custom-check"></span>
+            <label class="form-check-label mx-3" for="fixingpins">Оренда пінів/фрези</label>
+          </div>
+          <div id="fixingbrand" style="display:none">
+            <div class="form-group mb-3">
+              <input class="form-control border border-dark-light" type="text" name="brandpins" id="brandpins" placeholder="Бренд пінів:">
+            </div>
+            <div class="form-group mb-3">
+              <input class="form-control border border-dark-light" type="text" name="pinstype" id="pinstype" placeholder="Тип пінів:">
+            </div>
+            <div class="form-group mb-3">
+              <input class="form-control border border-dark-light" type="text" name="branddrill" id="branddrill" placeholder="Бренд фрези:">
+            </div>
+            <div class="form-group mb-3">
+              <input class="form-control border border-dark-light" type="text" name="drilltype" id="drilltype" placeholder="Тип фрези:">
+            </div>
+          </div>
+          <h4 class="text-uppercase">ТИМЧАСОВА КОНСТРУКЦІЯ</h4>
+          <div class="form-group mb-3">
+            <input class="form-control border border-dark-light" type="text" name="tempcount" id="tempcount" placeholder="Кількість одиниць">
+          </div>
+          <div class="form-group mb-3">
+            <input class="form-control border border-dark-light" type="text" name="tempcolor" id="tempcolor" placeholder="Колір">
+          </div>
+          <div class="form-row mb-4">
+            <div class="col-12 col-sm-6">
+              <div class="form-group mb-3">
+                <select class="form-control border border-dark-light justselect" name="temptype">
+                  <option value="" selected disabled>Обрати вид</option>
+                  <option value="pmma">РММА</option>
+                  <option value="printed">ДРУКОВАНІ</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group mb-3">
+                <select class="form-control border border-dark-light justselect" name="tempprint">
+                  <option value="" selected disabled>Обрати</option>
+                  <option value="fp1">FP1</option>
+                  <option value="fp2">FP2</option>
+                  <option value="fp3">FP3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col-12 col-sm-6">
+              <div class="form-group form-check form-check-inline mb-3">
+                <input class="form-control form-check" type="checkbox" name="tempdyeing" id="tempdyeing">
+                <span class="custom-check"></span>
+                <label class="form-check-label mx-3" for="fixingpins">Фарбування</label>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group form-check form-check-inline mb-3">
+                <input class="form-control form-check" type="checkbox" name="tempglazing" id="tempglazing">
+                <span class="custom-check"></span>
+                <label class="form-check-label mx-3" for="fixingpins">Глазурування</label>
+              </div>
+            </div>
+          </div>
+          <h4 class="text-uppercase">БАЛКА</h4>
+          <div class="form-group mb-3">
+            <select class="form-control border border-dark-light justselect" name="tempprint">
+              <option value="" selected disabled>Обрати</option>
+              <option value="none">Ні</option>
+              <option value="solid">Цільна</option>
+              <option value="forwelding">Під зварку</option>
+            </select>
+          </div>
+          <h4 class="text-uppercase">ВАКСАП</h4>
+          <div class="form-group form-check form-check-inline mb-3">
+            <input class="form-control form-check" type="checkbox" name="byprodigident" id="byprodigident">
+            <span class="custom-check"></span>
+            <label class="form-check-label mx-3" for="fixingpins">ВИКОНУЄ ProDigiDent LAB</label>
+          </div>
+          <div class="form-group mb-3">
+            <input class="form-control border border-dark-light" type="text" name="waxnumber" id="waxnumber" placeholder="Кількість одиниць">
+          </div>
+          <ul class="h5 text-plain text-dark-light pl-lg-6">
+            <li>якщо ваксап виконує лабораторія, то робляться відбитки на обох щелепах з прикусними валіками</li>
+          </ul>
         </div>
         <h3 class="text-uppercase">ДИЗАЙН КОНСТРУКЦИИ:</h3>
         <div class="form-row mb-4">
@@ -449,7 +548,7 @@
             }
           });
         </script>
-      </div>
+      </form>
     </div>
   </div>
 </section>
